@@ -7,13 +7,7 @@ import Header from './Component/Header/Header';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'; 
 import { configureStore } from '@reduxjs/toolkit';
-import FormReducer from './FormReducer';
-
-const store = configureStore({
-  reducer:{
-    users:FormReducer
-  }
-})
+import store from './store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

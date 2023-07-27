@@ -14,8 +14,8 @@ const Header = () => {
                         </h1>
                     </div>
                     <div className='flex gap-6'>
-                        <NavLink  to={'/'} className='hover:text-blue-700 font-semibold' activeClassName="active">Event From</NavLink>
-                        <NavLink  to={'/eventData'} className='hover:text-blue-700 font-semibold' activeClassName="active">Event List</NavLink>
+                        <NavLink to={'/'} className='hover:text-blue-700 font-semibold'>Event From</NavLink>
+                        <NavLink to={'/eventData'} className='hover:text-blue-700 font-semibold'>Event List</NavLink>
                     </div>
                 </div>
             </div>

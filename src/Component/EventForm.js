@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { addEvent } from '../FormReducer';
+import { addEvent } from '../actions'; 
 
 
 const EventForm = () => {
@@ -31,7 +31,7 @@ const EventForm = () => {
                             {errors.eventName && <p className='text-red-700 text-xs font-semibold mt-1'>{errors.eventName?.message}</p>}
                         </div>
                         <div className="form-group mb-5">
-                            <select class="w-full rounded border border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base px-2"
+                            <select className="w-full rounded border border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base px-2"
                                 {...register("eventType", { required: "This feild is required" })}
                             >
                                 <option value=''>Event Type</option>
@@ -45,14 +45,14 @@ const EventForm = () => {
                         </div>
                         <div className="form-group mb-5 flex gap-3">
                             <div className='w-1/2'>
-                                <label class="leading-7 text-sm text-gray-600">Start date</label>
+                                <label className="leading-7 text-sm text-gray-600">Start date</label>
                                 <input type="date" name="startDate"  className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                                 {...register("startDate", { required: "This feild is required" })}
                                 />
                                 {errors.startDate && <p className='text-red-700 text-xs font-semibold mt-1'>{errors.startDate?.message}</p>}
                             </div>
                             <div className='w-1/2'>
-                                <label class="leading-7 text-sm text-gray-600">End date</label>
+                                <label className="leading-7 text-sm text-gray-600">End date</label>
                                 <input type="date" name="endDate" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                                 {...register("endDate", { required: "This feild is required" })}
                                 />

@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const EventData = () => {
 
-    const eventList = useSelector((state) => state.users);
-
+    const eventList = useSelector((state) => state.addEventFormData);
+    console.log(typeof eventList);
     console.log(eventList);
-    console.log(eventList.length);
+
+    const [eventData, setEventData] = useState([...eventList]);
+
+    
 
     if (eventList.length > 0) {
         return (
           <>
             <section className="text-gray-600 body-font">
               <div className="container px-10 py-16 mx-auto">
-                <h1 className="text-3xl font-medium title-font mb-10 text-gray-900 text-center">
-                  Event List
-                </h1>
+                <div className='text-center mb-10'>
+                    <h1 className="text-3xl font-medium title-font  text-gray-900">
+                    Event List
+                    </h1>
+                    
+                </div>
                 <div className="w-full mx-auto overflow-auto">
                   <table className="table-auto w-full text-left whitespace-no-wrap">
                     <thead>
@@ -48,7 +54,7 @@ const EventData = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {eventList?.map(
+                      {eventData?.map(
                         ({
                           eventName,
                           eventType,
